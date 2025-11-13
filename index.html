@@ -1,74 +1,185 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gariimpos de Luxo – Links</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gariimpos de Luxo – Links</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    }
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #ffe9df;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
+    body {
+      background-color: #ffeae0;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+    }
 
-        .logo {
-            width: 140px;
-            height: auto;
-            margin: 40px auto 10px;
-            display: block;
-            border-radius: 50%;
-        }
+    .container {
+      width: 100%;
+      max-width: 520px;
+      padding: 26px 18px 40px;
+      text-align: center;
+    }
 
-        h1 {
-            color: #df5d2e;
-            font-size: 28px;
-            margin-top: 10px;
-            font-weight: bold;
-        }
+    .logo-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
 
-        p {
-            color: #444;
-            margin-top: -5px;
-            font-size: 17px;
-        }
+    .logo {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 10px solid #fff;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+    }
 
-        .btn {
-            display: block;
-            background-color: #df5d2e;
-            color: white;
-            text-decoration: none;
-            padding: 18px;
-            border-radius: 12px;
-            margin: 18px auto;
-            width: 85%;
-            font-size: 20px;
-            font-weight: bold;
-        }
+    h1 {
+      font-size: 30px;
+      color: #df5d2e;
+      margin-bottom: 10px;
+    }
 
-        .btn:hover {
-            background-color: #c74f23;
-        }
-    </style>
+    .subtitle {
+      font-size: 16px;
+      line-height: 1.5;
+      color: #555;
+      margin-bottom: 26px;
+      padding: 0 10px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #df5d2e;
+      margin: 26px 0 10px;
+    }
+
+    .buttons-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 16px 18px;
+      border-radius: 999px;
+      background: #df5d2e;
+      color: #fff;
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: 600;
+      box-shadow: 0 6px 16px rgba(223, 93, 46, 0.35);
+      transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+    }
+
+    .btn span {
+      font-size: 19px;
+      margin-right: 6px;
+    }
+
+    .btn:hover,
+    .btn:active {
+      background: #c54e24;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(223, 93, 46, 0.4);
+    }
+
+    .btn-secondary {
+      background: #ffb43e;
+      box-shadow: 0 6px 16px rgba(255, 180, 62, 0.35);
+    }
+
+    .btn-secondary:hover,
+    .btn-secondary:active {
+      background: #f0a433;
+      box-shadow: 0 8px 20px rgba(255, 180, 62, 0.4);
+    }
+
+    .categories-note {
+      font-size: 13px;
+      color: #777;
+      margin-bottom: 10px;
+    }
+
+    .footer {
+      margin-top: 24px;
+      font-size: 12px;
+      color: #999;
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <!-- LOGO -->
+    <div class="logo-wrapper">
+      <img
+        src="82B974BE-7083-48D6-AB0C-DFE3B4AD18D0.png"
+        alt="Logo Gariimpos de Luxo"
+        class="logo"
+      />
+    </div>
 
-    <!-- LOGO CORRETA -->
-    <img src="82B974BE-7083-48D6-AB0C-DFE3B4AD18D0.png" class="logo" alt="Logo">
-
+    <!-- TÍTULO -->
     <h1>✨ Gariimpos de Luxo ✨</h1>
-    <p>Os achadinhos que você ama — tudo em um só lugar!</p>
+    <p class="subtitle">
+      Os achadinhos que você ama — tudo em um só lugar!
+    </p>
 
-    <!-- BOTÕES -->
-    <a class="btn" href="https://instagram.com/gariimposdeluxo" target="_blank">📸 Instagram Oficial</a>
+    <!-- BOTÕES PRINCIPAIS -->
+    <div class="buttons-group">
+      <a class="btn" href="https://www.instagram.com/gariimposdeluxo" target="_blank">
+        <span>📸</span> Instagram Oficial
+      </a>
 
-    <a class="btn" href="https://s.shopee.com.br/XXXXXXXX" target="_blank">🛒 Achadinho da Semana</a>
+      <a class="btn btn-secondary" href="#" target="_blank">
+        <span>🛒</span> Achadinho da Semana
+      </a>
 
-    <a class="btn" href="https://s.shopee.com.br/YYYYYYYY" target="_blank">🔥 Ofertas com Cupom</a>
+      <a class="btn" href="#" target="_blank">
+        <span>🔥</span> Ofertas com Cupom
+      </a>
 
-    <a class="btn" href="https://wa.me/55XXXXXXXXXX" target="_blank">💬 Fale com a Criadora</a>
+      <a class="btn btn-secondary" href="https://wa.me/55SEUNUMEROAQUI" target="_blank">
+        <span>💬</span> Fale com a Criadora
+      </a>
+    </div>
 
+    <!-- CATEGORIAS -->
+    <h2 class="section-title">Categorias de Achadinhos</h2>
+    <p class="categories-note">
+      Toque na categoria que combina com o que você procura agora. 💛
+    </p>
+
+    <div class="buttons-group">
+      <a class="btn btn-secondary" href="#" target="_blank">🏡 Decoração</a>
+      <a class="btn btn-secondary" href="#" target="_blank">🎄 Natal</a>
+      <a class="btn btn-secondary" href="#" target="_blank">👗 Moda Feminina</a>
+      <a class="btn btn-secondary" href="#" target="_blank">👔 Moda Masculina</a>
+      <a class="btn btn-secondary" href="#" target="_blank">🍳 Cozinha</a>
+      <a class="btn btn-secondary" href="#" target="_blank">🛍️ Utilidades</a>
+      <a class="btn btn-secondary" href="#" target="_blank">👶 Maternidade</a>
+      <a class="btn btn-secondary" href="#" target="_blank">🏋️‍♀️ Fitness</a>
+      <a class="btn btn-secondary" href="#" target="_blank">📱 Eletrônicos</a>
+      <a class="btn btn-secondary" href="#" target="_blank">👟 Calçados</a>
+      <a class="btn btn-secondary" href="#" target="_blank">💄 Beleza</a>
+      <a class="btn btn-secondary" href="#" target="_blank">🧒 Moda Infantil</a>
+    </div>
+
+    <p class="footer">
+      Gariimpos de Luxo • Achadinhos que vendem ✨
+    </p>
+  </div>
 </body>
 </html>
