@@ -3,192 +3,164 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gariimpos de Luxo – Links</title>
+  <title>Gariimpos de Luxo</title>
+
   <style>
-    * {
-      box-sizing: border-box;
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(#ffe7d6, #ffd2a8);
       margin: 0;
       padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-    }
-
-    body {
-      background-color: #ffeae0;
-      color: #333;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 520px;
-      padding: 26px 18px 40px;
       text-align: center;
     }
 
-    .logo-wrapper {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 18px;
-    }
-
     .logo {
-      width: 160px;
-      height: 160px;
+      width: 140px;
+      margin: 40px auto 10px;
+      display: block;
       border-radius: 50%;
-      object-fit: cover;
-      border: 10px solid #fff;
-      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
     }
 
     h1 {
-      font-size: 30px;
-      color: #df5d2e;
-      margin-bottom: 10px;
+      color: #d95525;
+      font-size: 28px;
+      margin-top: 10px;
     }
 
-    .subtitle {
-      font-size: 16px;
-      line-height: 1.5;
-      color: #555;
-      margin-bottom: 26px;
-      padding: 0 10px;
+    p.subtitle {
+      font-size: 17px;
+      color: #444;
+      margin-bottom: 30px;
     }
 
     .section-title {
-      font-size: 18px;
-      font-weight: 600;
-      color: #df5d2e;
-      margin: 26px 0 10px;
+      font-size: 20px;
+      color: #c14b22;
+      margin-top: 40px;
+      font-weight: bold;
     }
 
-    .buttons-group {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 10px;
-    }
-
-    .btn {
+    /* BOTÕES PRINCIPAIS */
+    .btn-primary, .btn-secondary {
       display: block;
-      width: 100%;
-      padding: 16px 18px;
-      border-radius: 999px;
-      background: #df5d2e;
-      color: #fff;
+      width: 85%;
+      max-width: 330px;
+      padding: 14px;
       text-decoration: none;
-      font-size: 17px;
-      font-weight: 600;
-      box-shadow: 0 6px 16px rgba(223, 93, 46, 0.35);
-      transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+      color: white;
+      margin: 10px auto;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: bold;
     }
 
-    .btn span {
-      font-size: 19px;
-      margin-right: 6px;
-    }
-
-    .btn:hover,
-    .btn:active {
-      background: #c54e24;
-      transform: translateY(-1px);
-      box-shadow: 0 8px 20px rgba(223, 93, 46, 0.4);
+    .btn-primary {
+      background: #d95525;
     }
 
     .btn-secondary {
-      background: #ffb43e;
-      box-shadow: 0 6px 16px rgba(255, 180, 62, 0.35);
+      background: #f28f1e;
     }
 
-    .btn-secondary:hover,
-    .btn-secondary:active {
-      background: #f0a433;
-      box-shadow: 0 8px 20px rgba(255, 180, 62, 0.4);
+    /* GRADE DE CATEGORIAS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      width: 90%;
+      max-width: 380px;
+      margin: 25px auto;
     }
 
-    .categories-note {
-      font-size: 13px;
-      color: #777;
-      margin-bottom: 10px;
+    .cat-card {
+      background: white;
+      padding: 12px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform .2s;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .cat-card:hover {
+      transform: scale(1.06);
+    }
+
+    .cat-img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 8px;
     }
 
     .footer {
-      margin-top: 24px;
-      font-size: 12px;
-      color: #999;
+      margin-top: 45px;
+      font-size: 15px;
+      color: #c1662a;
+      padding-bottom: 40px;
     }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <!-- LOGO -->
-    <div class="logo-wrapper">
-      <img
-        src="82B974BE-7083-48D6-AB0C-DFE3B4AD18D0.png"
-        alt="Logo Gariimpos de Luxo"
-        class="logo"
-      />
-    </div>
 
-    <!-- TÍTULO -->
-    <h1>✨ Gariimpos de Luxo ✨</h1>
-    <p class="subtitle">
-      Os achadinhos que você ama — tudo em um só lugar!
-    </p>
+  <img class="logo" src="82B974BE-7083-48D6-AB0C-DFE3B4AD18D0.png" />
 
-    <!-- BOTÕES PRINCIPAIS -->
-    <div class="buttons-group">
-      <a class="btn" href="https://www.instagram.com/gariimposdeluxo" target="_blank">
-        <span>📸</span> Instagram Oficial
-      </a>
+  <h1>✨ Gariimpos de Luxo ✨</h1>
+  <p class="subtitle">Os achadinhos que você ama — tudo em um só lugar!</p>
 
-      <a class="btn btn-secondary" href="#" target="_blank">
-        <span>🛒</span> Achadinho da Semana
-      </a>
+  <!-- BOTÕES PRINCIPAIS -->
+  <a class="btn-primary" href="#" target="_blank">📸 Instagram Oficial</a>
+  <a class="btn-secondary" href="#" target="_blank">🛒 Achadinho da Semana</a>
+  <a class="btn-primary" href="#" target="_blank">🔥 Ofertas com Cupom</a>
+  <a class="btn-secondary" href="#" target="_blank">💬 Fale com a Criadora</a>
 
-      <a class="btn" href="#" target="_blank">
-        <span>🔥</span> Ofertas com Cupom
-      </a>
+  <h2 class="section-title">Categorias de Achadinhos</h2>
 
-      <a class="btn btn-secondary" href="https://wa.me/55SEUNUMEROAQUI" target="_blank">
-        <span>💬</span> Fale com a Criadora
-      </a>
-    </div>
+  <!-- GRADE DE CATEGORIAS -->
+  <div class="grid">
 
-    <!-- CATEGORIAS -->
-    <h2 class="section-title">Categorias de Achadinhos</h2>
-    <p class="categories-note">
-      Toque na categoria que combina com o que você procura agora. 💛
-    </p>
+    <!-- 27 categorias (com imagens padrão por enquanto) -->
+    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Roupas Femininas</a>
+    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Roupas Plus Size</a>
+    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Roupas Masculinas</a>
 
-  <div class="buttons-group">
+    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Sapatos Femininos</a>
+    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Sapatos Masculinos</a>
+    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Bolsas Femininas</a>
 
-<a class="btn btn-secondary" 
-   href="https://collshp.com/andradlio669/category/2932810?view=storefront" 
-   target="_blank" 
-   rel="noopener noreferrer">💄 Beleza</a>
+    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Bolsas Masculinas</a>
+    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Acessórios de Moda</a>
+    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Moda Infantil</a>
 
-<a class="btn btn-secondary" 
-   href="https://is.gd/StbOIp" 
-   target="_blank" 
-   rel="noopener noreferrer">🍳 Cozinha</a>
+    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Moda Feminina</a>
+    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Moda Masculina</a>
+    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Maternidade</a>
 
-<a class="btn btn-secondary" href="#" target="_blank">🏡 Decoração</a>
-<a class="btn btn-secondary" href="#" target="_blank">📱 Eletrônicos</a>
-<a class="btn btn-secondary" href="#" target="_blank">🏋️‍♀️ Fitness</a>
-<a class="btn btn-secondary" href="#" target="_blank">👗 Moda Feminina</a>
-<a class="btn btn-secondary" href="#" target="_blank">🧒 Moda Infantil</a>
-<a class="btn btn-secondary" href="#" target="_blank">👔 Moda Masculina</a>
-<a class="btn btn-secondary" href="#" target="_blank">👶 Maternidade</a>
-<a class="btn btn-secondary" href="#" target="_blank">🎄 Natal</a>
-<a class="btn btn-secondary" href="#" target="_blank">📚 Utilidades</a>
+    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Beleza</a>
+    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Saúde</a>
+    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Casa e Construção</a>
 
-</div>
+    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Eletrodomésticos</a>
+    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Cozinha</a>
+    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Utilidades</a>
 
-<p class="footer">
-  Gariimpos de Luxo • Achadinhos que vendem ✨
-</p>
+    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Celulares</a>
+    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Computadores</a>
+    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Câmeras e Drones</a>
+
+    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Animais Domésticos</a>
+    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Brinquedos e Hobbies</a>
+    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Esportes e Lazer</a>
+
+    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Jogos e Consoles</a>
+    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Viagens e Bagagens</a>
+    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Livros e Revistas</a>
+
   </div>
+
+  <p class="footer">Gariimpos de Luxo • Achadinhos que vendem ✨</p>
+
 </body>
 </html>
