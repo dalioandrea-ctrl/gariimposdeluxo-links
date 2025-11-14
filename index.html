@@ -1,255 +1,163 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gariimpos de Luxo ✨</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gariimpos de Luxo</title>
 
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background: #ffeadd;
-      color: #5a3b31;
-    }
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #ffe9dd;
+    text-align: center;
+  }
 
-    .container {
-      max-width: 480px;
-      margin: 0 auto;
-      padding: 20px;
-      text-align: center;
-    }
+  .container {
+    width: 90%;
+    max-width: 480px;
+    margin: auto;
+    padding-top: 20px;
+  }
 
-    h1 {
-      font-size: 28px;
-      color: #df5d2e;
-      margin-bottom: 10px;
-    }
+  h1 {
+    color: #c54a21;
+    font-size: 32px;
+    margin-bottom: -5px;
+  }
 
-    .subtitle-top {
-      font-size: 16px;
-      color: #7a5851;
-      margin-top: -5px;
-      margin-bottom: 25px;
-    }
+  p.subtitle {
+    font-size: 16px;
+    color: #5a3b32;
+    margin-bottom: 30px;
+  }
 
-    .btn {
-      display: block;
-      width: 100%;
-      padding: 15px;
-      margin: 12px 0;
-      background: #df5d2e;
-      color: #fff;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: bold;
-      border-radius: 14px;
-      transition: 0.2s;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.12);
-    }
+  /* Botões principais */
+  .btn-main {
+    display: block;
+    background: linear-gradient(90deg, #e85d2a, #d94b18);
+    padding: 18px;
+    border-radius: 14px;
+    margin: 18px 0;
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
+    font-weight: bold;
+  }
 
-    .btn:hover {
-      background: #c94d21;
-    }
+  .btn-main:nth-child(3) {
+    background: linear-gradient(90deg, #ff9d2e, #ff7b00);
+  }
 
-    /* ------ CATEGORIAS ------ */
+  .btn-main:nth-child(4) {
+    background: linear-gradient(90deg, #ff642b, #e84a15);
+  }
 
-    h2 {
-      margin-top: 35px;
-      margin-bottom: 5px;
-      font-size: 22px;
-      color: #c14a22;
-    }
+  /* Título de categorias */
+  .section-title {
+    font-size: 26px;
+    color: #c54a21;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
 
-    .subtitle {
-      font-size: 14px;
-      color: #7a5851;
-      margin-bottom: 20px;
-      margin-top: 0;
-    }
+  /* Acordeões */
+  details {
+    background: white;
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin-bottom: 15px;
+    text-align: left;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.15);
+    cursor: pointer;
+  }
 
-    .categories-accordion {
-      max-width: 480px;
-      margin: 0 auto 40px;
-    }
+  summary {
+    font-size: 20px;
+    font-weight: bold;
+    color: #c54a21;
+    outline: none;
+  }
 
-    .cat-group {
-      margin-bottom: 12px;
-    }
+  .subitem {
+    margin: 8px 0 6px 12px;
+    font-size: 17px;
+    color: #444;
+  }
 
-    .cat-toggle {
-      width: 100%;
-      background: linear-gradient(90deg, #ffb43e, #df5d2e);
-      color: #fff;
-      font-size: 16px;
-      font-weight: 600;
-      border: none;
-      border-radius: 24px;
-      padding: 12px 16px;
-      text-align: left;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.12);
-    }
+  .subitem a {
+    text-decoration: none;
+    color: #444;
+  }
+</style>
 
-    .cat-arrow {
-      font-size: 14px;
-      opacity: 0.9;
-      transition: transform 0.25s ease;
-    }
-
-    .cat-group.open .cat-arrow {
-      transform: rotate(180deg);
-    }
-
-    .subcats {
-      display: none;
-      padding: 10px 12px 6px;
-    }
-
-    .cat-group.open .subcats {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .subcats a {
-      flex: 1 1 calc(50% - 8px);
-      background: #ffffff;
-      color: #c14a22;
-      border-radius: 18px;
-      padding: 8px 10px;
-      font-size: 14px;
-      text-align: center;
-      text-decoration: none;
-      border: 1px solid #ffd4aa;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-
-    .subcats a:hover {
-      background: #fff3e4;
-    }
-
-    @media (min-width: 600px) {
-      .subcats a {
-        flex: 1 1 calc(33.33% - 8px);
-      }
-    }
-
-    .footer {
-      margin-top: 30px;
-      font-size: 14px;
-      color: #a26a57;
-    }
-  </style>
 </head>
-
 <body>
-  <div class="container">
 
-    <h1>✨ Gariimpos de Luxo ✨</h1>
-    <p class="subtitle-top">Os achadinhos que você ama — tudo em um só lugar!</p>
+<div class="container">
 
-    <!-- BOTÕES PRINCIPAIS -->
-    <a class="btn" href="#" target="_blank">📸 Instagram Oficial</a>
-    <a class="btn" href="#" target="_blank">🛒 Achadinho da Semana</a>
-    <a class="btn" href="#" target="_blank">🔥 Ofertas com Cupom</a>
-    <a class="btn" href="#" target="_blank">💬 Fale com a Criadora</a>
+  <h1>✨ Gariimpos de Luxo ✨</h1>
+  <p class="subtitle">Os achadinhos que você ama — tudo em um só lugar!</p>
 
-    <!-- CATEGORIAS -->
-    <h2>Categorias de Achadinhos</h2>
-    <p class="subtitle">Toque para abrir e ver os tipos dentro de cada categoria.</p>
+  <!-- BOTÕES PRINCIPAIS -->
+  <a href="#" class="btn-main">📸 Instagram Oficial</a>
+  <a href="#" class="btn-main">🛒 Achadinho da Semana</a>
+  <a href="#" class="btn-main">🔥 Ofertas com Cupom</a>
+  <a href="#" class="btn-main">💬 Fale com a Criadora</a>
 
-    <div class="categories-accordion">
+  <h2 class="section-title">Categorias de Achadinhos</h2>
 
-      <!-- MODA -->
-      <div class="cat-group">
-        <button class="cat-toggle">👗 Moda <span class="cat-arrow">▼</span></button>
-        <div class="subcats">
-          <a href="#">Roupas Femininas</a>
-          <a href="#">Roupas Masculinas</a>
-          <a href="#">Moda Infantil</a>
-          <a href="#">Sapatos Femininos</a>
-          <a href="#">Sapatos Masculinos</a>
-          <a href="#">Bolsas e Acessórios</a>
-        </div>
-      </div>
+  <!-- CATEGORIAS EM ACORDEÃO -->
 
-      <!-- BEBÊ & FAMÍLIA -->
-      <div class="cat-group">
-        <button class="cat-toggle">👶 Bebê & Família <span class="cat-arrow">▼</span></button>
-        <div class="subcats">
-          <a href="#">Mãe e Bebê</a>
-          <a href="#">Brinquedos e Hobbies</a>
-        </div>
-      </div>
+  <details>
+    <summary>👗 MODA</summary>
+      <p class="subitem">• Roupas Femininas</p>
+      <p class="subitem">• Roupas Masculinas</p>
+      <p class="subitem">• Moda Infantil</p>
+      <p class="subitem">• Sapatos Femininos</p>
+      <p class="subitem">• Sapatos Masculinos</p>
+      <p class="subitem">• Bolsas e Acessórios</p>
+  </details>
 
-      <!-- BELEZA & SAÚDE -->
-      <div class="cat-group">
-        <button class="cat-toggle">💄 Beleza & Saúde <span class="cat-arrow">▼</span></button>
-        <div class="subcats">
-          <a href="#">Beleza</a>
-          <a href="#">Saúde</a>
-        </div>
-      </div>
+  <details>
+    <summary>👶 BEBÊ & FAMÍLIA</summary>
+      <p class="subitem">• Mãe e Bebê</p>
+      <p class="subitem">• Brinquedos e Hobbies</p>
+  </details>
 
-      <!-- TECNOLOGIA -->
-      <div class="cat-group">
-        <button class="cat-toggle">📱 Tecnologia <span class="cat-arrow">▼</span></button>
-        <div class="subcats">
-          <a href="#">Eletrônicos</a>
-          <a href="#">Celulares e Dispositivos</a>
-          <a href="#">Computadores e Acessórios</a>
-        </div>
-      </div>
+  <details>
+    <summary>💄 BELEZA & SAÚDE</summary>
+      <p class="subitem">• Beleza</p>
+      <p class="subitem">• Saúde</p>
+  </details>
 
-      <!-- CASA & DIA A DIA -->
-      <div class="cat-group">
-        <button class="cat-toggle">🏡 Casa & Dia a Dia <span class="cat-arrow">▼</span></button>
-        <div class="subcats">
-          <a href="#">Casa e Construção</a>
-          <a href="#">Eletrodomésticos</a>
-          <a href="#">Cozinha</a>
-          <a href="#">Utilidades</a>
-          <a href="#">Papelaria</a>
-        </div>
-      </div>
+  <details>
+    <summary>📱 TECNOLOGIA</summary>
+      <p class="subitem">• Eletrônicos</p>
+      <p class="subitem">• Celulares e Dispositivos</p>
+      <p class="subitem">• Computadores e Acessórios</p>
+  </details>
 
-      <!-- OUTROS -->
-      <div class="cat-group">
-        <button class="cat-toggle">🧳 Outros <span class="cat-arrow">▼</span></button>
-        <div class="subcats">
-          <a href="#">Viagens</a>
-          <a href="#">Animais Domésticos</a>
-          <a href="#">Alimentos e Bebidas</a>
-          <a href="#">Esportes e Lazer</a>
-        </div>
-      </div>
+  <details>
+    <summary>🏡 CASA & DIA A DIA</summary>
+      <p class="subitem">• Casa e Construção</p>
+      <p class="subitem">• Eletrodomésticos</p>
+      <p class="subitem">• Cozinha</p>
+      <p class="subitem">• Utilidades</p>
+      <p class="subitem">• Papelaria</p>
+  </details>
 
-    </div>
+  <details>
+    <summary>🧳 OUTROS</summary>
+      <p class="subitem">• Viagens</p>
+      <p class="subitem">• Animais Domésticos</p>
+      <p class="subitem">• Alimentos e Bebidas</p>
+      <p class="subitem">• Esportes e Lazer</p>
+  </details>
 
-    <p class="footer">
-      Gariimpos de Luxo • Achadinhos que vendem ✨
-    </p>
-
-  </div>
-
-  <!-- SCRIPT DO ACORDEÃO -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const groups = document.querySelectorAll('.cat-group');
-
-      groups.forEach(group => {
-        const btn = group.querySelector('.cat-toggle');
-        btn.addEventListener('click', () => {
-          group.classList.toggle('open');
-        });
-      });
-    });
-  </script>
+</div>
 
 </body>
 </html>
