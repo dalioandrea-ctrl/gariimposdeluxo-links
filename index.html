@@ -3,165 +3,253 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gariimpos de Luxo</title>
+  <title>Gariimpos de Luxo ✨</title>
 
   <style>
-    body 
-      font-family: Arial, sans-serif;
-      background: linear-gradient(#ffe7d6, #ffd2a8);
+    body {
       margin: 0;
       padding: 0;
+      font-family: Arial, sans-serif;
+      background: #ffeadd;
+      color: #5a3b31;
+    }
+
+    .container {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 20px;
       text-align: center;
     }
 
-    .logo {
-      width: 140px;
-      margin: 40px auto 10px;
-      display: block;
-      border-radius: 50%;
-    }
-
     h1 {
-      color: #d95525;
       font-size: 28px;
-      margin-top: 10px;
+      color: #df5d2e;
+      margin-bottom: 10px;
     }
 
-    p.subtitle {
-      font-size: 17px;
-      color: #444;
-      margin-bottom: 30px;
+    .subtitle-top {
+      font-size: 16px;
+      color: #7a5851;
+      margin-top: -5px;
+      margin-bottom: 25px;
     }
 
-    .section-title {
-      font-size: 20px;
-      color: #c14b22;
-      margin-top: 40px;
-      font-weight: bold;
-    }
-
-    /* BOTÕES PRINCIPAIS */
-    .btn-primary, .btn-secondary {
+    .btn {
       display: block;
-      width: 85%;
-      max-width: 330px;
-      padding: 14px;
+      width: 100%;
+      padding: 15px;
+      margin: 12px 0;
+      background: #df5d2e;
+      color: #fff;
       text-decoration: none;
-      color: white;
-      margin: 10px auto;
-      border-radius: 12px;
       font-size: 18px;
       font-weight: bold;
+      border-radius: 14px;
+      transition: 0.2s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.12);
     }
 
-    .btn-primary {
-      background: #d95525;
+    .btn:hover {
+      background: #c94d21;
     }
 
-    .btn-secondary {
-      background: #f28f1e;
+    /* ------ CATEGORIAS ------ */
+
+    h2 {
+      margin-top: 35px;
+      margin-bottom: 5px;
+      font-size: 22px;
+      color: #c14a22;
     }
 
-    /* GRADE DE CATEGORIAS */
- .grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-items: center;
-  align-items: center;
-  gap: 18px;
-  width: 95%;
-  max-width: 420px;
-  margin: 25px auto;
-}
+    .subtitle {
+      font-size: 14px;
+      color: #7a5851;
+      margin-bottom: 20px;
+      margin-top: 0;
+    }
 
-    .cat-card {
-      background: white;
-      padding: 12px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: transform .2s;
+    .categories-accordion {
+      max-width: 480px;
+      margin: 0 auto 40px;
+    }
+
+    .cat-group {
+      margin-bottom: 12px;
+    }
+
+    .cat-toggle {
+      width: 100%;
+      background: linear-gradient(90deg, #ffb43e, #df5d2e);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      border-radius: 24px;
+      padding: 12px 16px;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+    }
+
+    .cat-arrow {
+      font-size: 14px;
+      opacity: 0.9;
+      transition: transform 0.25s ease;
+    }
+
+    .cat-group.open .cat-arrow {
+      transform: rotate(180deg);
+    }
+
+    .subcats {
+      display: none;
+      padding: 10px 12px 6px;
+    }
+
+    .cat-group.open .subcats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .subcats a {
+      flex: 1 1 calc(50% - 8px);
+      background: #ffffff;
+      color: #c14a22;
+      border-radius: 18px;
+      padding: 8px 10px;
+      font-size: 14px;
+      text-align: center;
       text-decoration: none;
-      color: #333;
+      border: 1px solid #ffd4aa;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     }
 
-    .cat-card:hover {
-      transform: scale(1.06);
+    .subcats a:hover {
+      background: #fff3e4;
     }
 
-    .cat-img {
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 8px;
+    @media (min-width: 600px) {
+      .subcats a {
+        flex: 1 1 calc(33.33% - 8px);
+      }
     }
 
     .footer {
-      margin-top: 45px;
-      font-size: 15px;
-      color: #c1662a;
-      padding-bottom: 40px;
+      margin-top: 30px;
+      font-size: 14px;
+      color: #a26a57;
     }
   </style>
 </head>
 
 <body>
+  <div class="container">
 
-  <img class="logo" src="82B974BE-7083-48D6-AB0C-DFE3B4AD18D0.png" />
+    <h1>✨ Gariimpos de Luxo ✨</h1>
+    <p class="subtitle-top">Os achadinhos que você ama — tudo em um só lugar!</p>
 
-  <h1>✨ Gariimpos de Luxo ✨</h1>
-  <p class="subtitle">Os achadinhos que você ama — tudo em um só lugar!</p>
+    <!-- BOTÕES PRINCIPAIS -->
+    <a class="btn" href="#" target="_blank">📸 Instagram Oficial</a>
+    <a class="btn" href="#" target="_blank">🛒 Achadinho da Semana</a>
+    <a class="btn" href="#" target="_blank">🔥 Ofertas com Cupom</a>
+    <a class="btn" href="#" target="_blank">💬 Fale com a Criadora</a>
 
-  <!-- BOTÕES PRINCIPAIS -->
-  <a class="btn-primary" href="#" target="_blank">📸 Instagram Oficial</a>
-  <a class="btn-secondary" href="#" target="_blank">🛒 Achadinho da Semana</a>
-  <a class="btn-primary" href="#" target="_blank">🔥 Ofertas com Cupom</a>
-  <a class="btn-secondary" href="#" target="_blank">💬 Fale com a Criadora</a>
+    <!-- CATEGORIAS -->
+    <h2>Categorias de Achadinhos</h2>
+    <p class="subtitle">Toque para abrir e ver os tipos dentro de cada categoria.</p>
 
-  <h2 class="section-title">Categorias de Achadinhos</h2>
+    <div class="categories-accordion">
 
-  <!-- GRADE DE CATEGORIAS -->
-  <div class="grid">
+      <!-- MODA -->
+      <div class="cat-group">
+        <button class="cat-toggle">👗 Moda <span class="cat-arrow">▼</span></button>
+        <div class="subcats">
+          <a href="#">Roupas Femininas</a>
+          <a href="#">Roupas Masculinas</a>
+          <a href="#">Moda Infantil</a>
+          <a href="#">Sapatos Femininos</a>
+          <a href="#">Sapatos Masculinos</a>
+          <a href="#">Bolsas e Acessórios</a>
+        </div>
+      </div>
 
-    <!-- 27 categorias (com imagens padrão por enquanto) -->
-    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Roupas Femininas</a>
-    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Roupas Masculinas</a>
+      <!-- BEBÊ & FAMÍLIA -->
+      <div class="cat-group">
+        <button class="cat-toggle">👶 Bebê & Família <span class="cat-arrow">▼</span></button>
+        <div class="subcats">
+          <a href="#">Mãe e Bebê</a>
+          <a href="#">Brinquedos e Hobbies</a>
+        </div>
+      </div>
 
-    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Sapatos Femininos</a>
-    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Sapatos Masculinos</a>
-    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Bolsas Femininas</a>
+      <!-- BELEZA & SAÚDE -->
+      <div class="cat-group">
+        <button class="cat-toggle">💄 Beleza & Saúde <span class="cat-arrow">▼</span></button>
+        <div class="subcats">
+          <a href="#">Beleza</a>
+          <a href="#">Saúde</a>
+        </div>
+      </div>
 
-    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Bolsas Masculinas</a>
-    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Acessórios de Moda</a>
-    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Moda Infantil</a>
+      <!-- TECNOLOGIA -->
+      <div class="cat-group">
+        <button class="cat-toggle">📱 Tecnologia <span class="cat-arrow">▼</span></button>
+        <div class="subcats">
+          <a href="#">Eletrônicos</a>
+          <a href="#">Celulares e Dispositivos</a>
+          <a href="#">Computadores e Acessórios</a>
+        </div>
+      </div>
 
-    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Moda Feminina</a>
-    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Moda Masculina</a>
-    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Maternidade</a>
+      <!-- CASA & DIA A DIA -->
+      <div class="cat-group">
+        <button class="cat-toggle">🏡 Casa & Dia a Dia <span class="cat-arrow">▼</span></button>
+        <div class="subcats">
+          <a href="#">Casa e Construção</a>
+          <a href="#">Eletrodomésticos</a>
+          <a href="#">Cozinha</a>
+          <a href="#">Utilidades</a>
+          <a href="#">Papelaria</a>
+        </div>
+      </div>
 
-    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Beleza</a>
-    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Saúde</a>
-    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Casa e Construção</a>
+      <!-- OUTROS -->
+      <div class="cat-group">
+        <button class="cat-toggle">🧳 Outros <span class="cat-arrow">▼</span></button>
+        <div class="subcats">
+          <a href="#">Viagens</a>
+          <a href="#">Animais Domésticos</a>
+          <a href="#">Alimentos e Bebidas</a>
+          <a href="#">Esportes e Lazer</a>
+        </div>
+      </div>
 
-    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Eletrodomésticos</a>
-    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Cozinha</a>
-    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Utilidades</a>
+    </div>
 
-    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Celulares</a>
-    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Computadores</a>
-    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Câmeras e Drones</a>
-
-    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Animais Domésticos</a>
-    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Brinquedos e Hobbies</a>
-    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Esportes e Lazer</a>
-
-    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Jogos e Consoles</a>
-    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Viagens e Bagagens</a>
-    <a class="cat-card" href="#"><img class="cat-img" src="https://i.imgur.com/w1U7rov.png"><br>Livros e Revistas</a>
+    <p class="footer">
+      Gariimpos de Luxo • Achadinhos que vendem ✨
+    </p>
 
   </div>
 
-  <p class="footer">Gariimpos de Luxo • Achadinhos que vendem ✨</p>
+  <!-- SCRIPT DO ACORDEÃO -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const groups = document.querySelectorAll('.cat-group');
+
+      groups.forEach(group => {
+        const btn = group.querySelector('.cat-toggle');
+        btn.addEventListener('click', () => {
+          group.classList.toggle('open');
+        });
+      });
+    });
+  </script>
 
 </body>
 </html>
