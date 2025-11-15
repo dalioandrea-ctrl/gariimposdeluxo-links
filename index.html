@@ -1,166 +1,450 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Gariimpos de Luxo</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gariimpos de Luxo – Links</title>
 
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #ffe9dd;
-    text-align: center;
-  }
+  <!-- Fonte Google (pode trocar se quiser) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+    rel="stylesheet"
+  />
 
-  .container {
-    width: 90%;
-    max-width: 480px;
-    margin: auto;
-    padding-top: 20px;
-  }
+  <style>
+    :root {
+      --bg: #050608;
+      --card: #111319;
+      --accent: #ff8733;
+      --accent-soft: rgba(255,135,51,0.15);
+      --text: #ffffff;
+      --muted: #c4c4c4;
+      --radius-lg: 18px;
+      --radius-sm: 999px;
+      --shadow-soft: 0 18px 45px rgba(0,0,0,0.55);
+    }
 
-  h1 {
-    color: #c54a21;
-    font-size: 32px;
-    margin-bottom: -5px;
-  }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  p.subtitle {
-    font-size: 16px;
-    color: #5a3b32;
-    margin-bottom: 30px;
-  }
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top, #202234 0, var(--bg) 55%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+    }
 
-  /* Botões principais */
-  .btn-main {
-    display: block;
-    background: linear-gradient(90deg, #e85d2a, #d94b18);
-    padding: 18px;
-    border-radius: 14px;
-    margin: 18px 0;
-    color: white;
-    font-size: 22px;
-    text-decoration: none;
-    font-weight: bold;
-  }
+    .page {
+      width: 100%;
+      max-width: 560px;
+      padding: 32px 16px 40px;
+    }
 
-  .btn-main:nth-child(3) {
-    background: linear-gradient(90deg, #ff9d2e, #ff7b00);
-  }
+    /* CABEÇALHO / PERFIL */
+    .profile-card {
+      background: linear-gradient(135deg, #1f2232, #10121b);
+      border-radius: 24px;
+      padding: 20px 18px;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+      position: sticky;
+      top: 16px;
+      z-index: 10;
+      backdrop-filter: blur(16px);
+    }
 
-  .btn-main:nth-child(4) {
-    background: linear-gradient(90deg, #ff642b, #e84a15);
-  }
+    .avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 20%, #ffe4c4, #ff7f50);
+      border: 3px solid var(--accent);
+      flex-shrink: 0;
+    }
 
-  /* Título de categorias */
-  .section-title {
-    font-size: 26px;
-    color: #c54a21;
-    margin-top: 40px;
-    margin-bottom: 15px;
-    font-weight: bold;
-  }
+    .profile-info h1 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
 
-  /* Acordeões */
-  details {
-    background: white;
-    border-radius: 12px;
-    padding: 14px 18px;
-    margin-bottom: 15px;
-    text-align: left;
-    box-shadow: 0px 2px 6px rgba(0,0,0,0.15);
-    cursor: pointer;
-  }
+    .profile-info p {
+      font-size: 0.86rem;
+      color: var(--muted);
+      line-height: 1.3;
+    }
 
-  summary {
-    font-size: 20px;
-    font-weight: bold;
-    color: #c54a21;
-    outline: none;
-  }
+    .tagline {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      font-size: 0.73rem;
+      margin-top: 6px;
+    }
 
-  .subitem {
-    margin: 8px 0 6px 12px;
-    font-size: 17px;
-    color: #444;
-  }
+    .tagline span {
+      font-size: 0.9rem;
+    }
 
-  .subitem a {
-    text-decoration: none;
-    color: #444;
-  }
-</style>
+    /* NAVEGAÇÃO DE CATEGORIAS */
+    .nav-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 18px 0 12px;
+    }
 
+    .chip {
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(10,12,18,0.8);
+      padding: 6px 10px;
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.15s ease-out;
+    }
+
+    .chip:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    main {
+      margin-top: 10px;
+    }
+
+    /* CATEGORIAS */
+    .category {
+      margin-bottom: 26px;
+    }
+
+    .category-header {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .category-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+    }
+
+    .category-tag {
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    /* CARTÕES DE LINK */
+    .links-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .link-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      padding: 10px 12px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.45);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid rgba(255,255,255,0.06);
+      text-decoration: none;
+      color: var(--text);
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, border-color 0.12s;
+    }
+
+    .link-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.65);
+      border-color: rgba(255,255,255,0.18);
+    }
+
+    .thumb {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background-size: cover;
+      background-position: center;
+      background-color: #222633;
+      flex-shrink: 0;
+    }
+
+    .link-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .link-title {
+      font-size: 0.89rem;
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+
+    .link-desc {
+      font-size: 0.74rem;
+      color: var(--muted);
+      line-height: 1.25;
+    }
+
+    .pill {
+      font-size: 0.7rem;
+      border-radius: var(--radius-sm);
+      padding: 2px 7px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      margin-bottom: 3px;
+    }
+
+    .pill span {
+      font-size: 0.8rem;
+    }
+
+    .link-cta {
+      font-size: 0.75rem;
+      color: var(--accent);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    footer {
+      margin-top: 18px;
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-align: center;
+      opacity: 0.75;
+    }
+  </style>
 </head>
+
 <body>
+  <div class="page">
+    <!-- PERFIL / TOPO -->
+    <header class="profile-card">
+      <div class="avatar"></div>
 
-<div class="container">
+      <div class="profile-info">
+        <h1>Gariimpos de Luxo ✨</h1>
+        <p>Caçadora de ofertas | Promoções, achadinhos e produtos que realmente valem a pena.</p>
+        <div class="tagline">
+          <span>🛒</span>
+          <strong>Ofertas de até 80% OFF</strong>
+        </div>
+      </div>
+    </header>
 
-  <h1>✨ Gariimpos de Luxo ✨</h1>
-  <p class="subtitle">Os achadinhos que você ama — tudo em um só lugar!</p>
+    <!-- NAVEGAÇÃO RÁPIDA ENTRE CATEGORIAS -->
+    <nav class="nav-chips">
+      <a class="chip" href="#cozinha">🍳 Cozinha</a>
+      <a class="chip" href="#organizacao">🧺 Organização</a>
+      <a class="chip" href="#moda">👗 Moda feminina</a>
+      <a class="chip" href="#decoracao">🏠 Decoração</a>
+      <a class="chip" href="#ofertas">🛒 Ofertas do dia</a>
+      <a class="chip" href="#virais">🔥 Achadinhos virais</a>
+    </nav>
 
-  <!-- BOTÕES PRINCIPAIS -->
-  <a href="#" class="btn-main">📸 Instagram Oficial</a>
-  <a href="#" class="btn-main">🛒 Achadinho da Semana</a>
-  <a href="#" class="btn-main">🔥 Ofertas com Cupom</a>
-  <a href="#" class="btn-main">💬 Fale com a Criadora</a>
+    <main>
+      <!-- ======================= COZINHA ======================= -->
+      <section id="cozinha" class="category">
+        <div class="category-header">
+          <h2 class="category-title">🍳 Cozinha</h2>
+          <span class="category-tag">Utensílios que facilitam sua vida</span>
+        </div>
 
-  <h2 class="section-title">Categorias de Achadinhos</h2>
+        <div class="links-grid">
+          <!-- DUPLIQUE ESSE BLOCO PARA MAIS PRODUTOS DE COZINHA -->
+          <a class="link-card"
+             href="https://shopee.seu-link-de-cozinha"
+             target="_blank" rel="noopener">
+            <div class="thumb"
+                 style="background-image:url('https://via.placeholder.com/120x120.png?text=Cozinha');">
+            </div>
 
-  <!-- CATEGORIAS EM ACORDEÃO -->
+            <div class="link-text">
+              <div class="pill">
+                <span>⭐</span> Achadinho de cozinha
+              </div>
+              <div class="link-title">Mini processador elétrico</div>
+              <div class="link-desc">Pica alho, cebola e legumes em segundos. Praticidade total na cozinha!</div>
+            </div>
 
-  <details>
-    <summary>👗 MODA</summary>
-    <a class="sub-link" href="https://collshp.com/andradlio669?view=storefront" 
-   target="_blank" rel="noopener noreferrer">
-   👗 Moda Feminina
-</a>
-      <p class="subitem">• Roupas Masculinas</p>
-      <p class="subitem">• Moda Infantil</p>
-      <p class="subitem">• Sapatos Femininos</p>
-      <p class="subitem">• Sapatos Masculinos</p>
-      <p class="subitem">• Bolsas e Acessórios</p>
-  </details>
+            <div class="link-cta">Ver na Shopee →</div>
+          </a>
+          <!-- FIM DO BLOCO DE PRODUTO -->
+        </div>
+      </section>
 
-  <details>
-    <summary>👶 BEBÊ & FAMÍLIA</summary>
-      <p class="subitem">• Mãe e Bebê</p>
-      <p class="subitem">• Brinquedos e Hobbies</p>
-  </details>
+      <!-- ======================= ORGANIZAÇÃO ======================= -->
+      <section id="organizacao" class="category">
+        <div class="category-header">
+          <h2 class="category-title">🧺 Organização</h2>
+          <span class="category-tag">Tudo no lugar, sem bagunça</span>
+        </div>
 
-  <details>
-    <summary>💄 BELEZA & SAÚDE</summary>
-      <p class="subitem">• Beleza</p>
-      <p class="subitem">• Saúde</p>
-  </details>
+        <div class="links-grid">
+          <a class="link-card"
+             href="https://shopee.seu-link-de-organizacao"
+             target="_blank" rel="noopener">
+            <div class="thumb"
+                 style="background-image:url('https://via.placeholder.com/120x120.png?text=Org');">
+            </div>
 
-  <details>
-    <summary>📱 TECNOLOGIA</summary>
-      <p class="subitem">• Eletrônicos</p>
-      <p class="subitem">• Celulares e Dispositivos</p>
-      <p class="subitem">• Computadores e Acessórios</p>
-  </details>
+            <div class="link-text">
+              <div class="pill">
+                <span>✨</span> Fim da bagunça
+              </div>
+              <div class="link-title">Organizador de gaveta ajustável</div>
+              <div class="link-desc">Deixa meias, lingeries e miudezas separadinhas e fáceis de achar.</div>
+            </div>
 
-  <details>
-    <summary>🏡 CASA & DIA A DIA</summary>
-      <p class="subitem">• Casa e Construção</p>
-      <p class="subitem">• Eletrodomésticos</p>
-      <p class="subitem">• Cozinha</p>
-      <p class="subitem">• Utilidades</p>
-      <p class="subitem">• Papelaria</p>
-  </details>
+            <div class="link-cta">Ver na Shopee →</div>
+          </a>
+        </div>
+      </section>
 
-  <details>
-    <summary>🧳 OUTROS</summary>
-      <p class="subitem">• Viagens</p>
-      <p class="subitem">• Animais Domésticos</p>
-      <p class="subitem">• Alimentos e Bebidas</p>
-      <p class="subitem">• Esportes e Lazer</p>
-  </details>
+      <!-- ======================= MODA FEMININA ======================= -->
+      <section id="moda" class="category">
+        <div class="category-header">
+          <h2 class="category-title">👗 Moda feminina</h2>
+          <span class="category-tag">Peças lindas por preço de achadinho</span>
+        </div>
 
-</div>
+        <div class="links-grid">
+          <a class="link-card"
+             href="https://shopee.seu-link-de-moda"
+             target="_blank" rel="noopener">
+            <div class="thumb"
+                 style="background-image:url('https://via.placeholder.com/120x120.png?text=Moda');">
+            </div>
 
+            <div class="link-text">
+              <div class="pill">
+                <span>🔥</span> Parece caro, mas não é
+              </div>
+              <div class="link-title">Vestido vermelho fenda lateral</div>
+              <div class="link-desc">Modelagem linda, tecido confortável e aquele caimento de luxo.</div>
+            </div>
+
+            <div class="link-cta">Ver na Shopee →</div>
+          </a>
+        </div>
+      </section>
+
+      <!-- ======================= DECORAÇÃO ======================= -->
+      <section id="decoracao" class="category">
+        <div class="category-header">
+          <h2 class="category-title">🏠 Decoração</h2>
+          <span class="category-tag">Detalhes que deixam a casa pinterest</span>
+        </div>
+
+        <div class="links-grid">
+          <a class="link-card"
+             href="https://shopee.seu-link-de-decoracao"
+             target="_blank" rel="noopener">
+            <div class="thumb"
+                 style="background-image:url('https://via.placeholder.com/120x120.png?text=Deco');">
+            </div>
+
+            <div class="link-text">
+              <div class="pill">
+                <span>🕯️</span> Toque de aconchego
+              </div>
+              <div class="link-title">Luminária de mesa minimalista</div>
+              <div class="link-desc">Deixa qualquer cantinho com cara de café chique.</div>
+            </div>
+
+            <div class="link-cta">Ver na Shopee →</div>
+          </a>
+        </div>
+      </section>
+
+      <!-- ======================= OFERTAS DO DIA ======================= -->
+      <section id="ofertas" class="category">
+        <div class="category-header">
+          <h2 class="category-title">🛒 Ofertas do dia</h2>
+          <span class="category-tag">Promoções que estão rolando AGORA</span>
+        </div>
+
+        <div class="links-grid">
+          <a class="link-card"
+             href="https://shopee.seu-link-de-oferta-1"
+             target="_blank" rel="noopener">
+            <div class="thumb"
+                 style="background-image:url('https://via.placeholder.com/120x120.png?text=Oferta');">
+            </div>
+
+            <div class="link-text">
+              <div class="pill">
+                <span>⏰</span> Oferta relâmpago
+              </div>
+              <div class="link-title">Achadinho do dia por menos de R$ XX</div>
+              <div class="link-desc">Corre antes que esgote! Atualizo essa parte todo dia 🧡</div>
+            </div>
+
+            <div class="link-cta">Pegar desconto →</div>
+          </a>
+        </div>
+      </section>
+
+      <!-- ======================= ACHADINHOS VIRAIS ======================= -->
+      <section id="virais" class="category">
+        <div class="category-header">
+          <h2 class="category-title">🔥 Achadinhos virais</h2>
+          <span class="category-tag">Os mais pedidos dos meus vídeos</span>
+        </div>
+
+        <div class="links-grid">
+          <a class="link-card"
+             href="https://shopee.seu-link-viral-1"
+             target="_blank" rel="noopener">
+            <div class="thumb"
+                 style="background-image:url('https://via.placeholder.com/120x120.png?text=Viral');">
+            </div>
+
+            <div class="link-text">
+              <div class="pill">
+                <span>📹</span> Do vídeo mais bombado
+              </div>
+              <div class="link-title">Produto viral #1</div>
+              <div class="link-desc">Aquele que todo mundo me pediu o link nos comentários.</div>
+            </div>
+
+            <div class="link-cta">Ver na Shopee →</div>
+          </a>
+
+          <!-- ADICIONE MAIS LINKS VIRAIS AQUI -->
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Gariimpos de Luxo – Achadinhos que vendem 🧡<br />
+      Atualize sempre os links conforme as promoções mudarem 😉
+    </footer>
+  </div>
 </body>
 </html>
